@@ -302,7 +302,8 @@ body.dark .search-field i{
     align-items: center;
 
     justify-content:space-around;
-    margin-top: 50px;
+    margin-top: 0px;
+    margin-bottom: 50px;
 }
 
 .hero {
@@ -314,7 +315,7 @@ body.dark .search-field i{
     align-items: center;
     width: 80%;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 200px;
     justify-content:space-around;
 
   
@@ -325,7 +326,7 @@ body.dark .search-field i{
     height:100%;
     display: flex;
     flex-direction: column;
-    
+    margin-left: 100px;
   }
 
 .textContainer {
@@ -394,10 +395,12 @@ object-fit: cover;
     position: relative;
     top: 0;
     right: 0;
-    width: 50%;
-    height: 100%;
+    width: 500px;
+    height: 800px;
     object-fit: cover;
     opacity: 1;
+    margin-right: 100px;
+ 
 }
 
 /*ROW 2*/
@@ -405,7 +408,11 @@ object-fit: cover;
 #services{
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 100px);
+    height: 550px;
+    padding-top: 40px;
+    background-color: white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .services-pick{
@@ -464,16 +471,17 @@ object-fit: cover;
 .service-fee-row{
     width: 100%;
     min-height: 150px;
-    background-color: black;
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 83px;
     margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .h-rate{
-    color: white;
+    color: black;
 }
 
 .h-rate h4{
@@ -773,4 +781,26 @@ object-fit: cover;
         align-items: start;
         width: 300px;
     }
+}
+
+/*REVIEW*/
+
+.review-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.review-box{
+    padding: 20px;
+    width: 500px;
+    border: 1px solid black;
+}
+
+.review-box h4{
+    font-weight: 500;
+    font-size: 13px;
+    opacity: 0.6;
 }

@@ -61,7 +61,6 @@ useEffect(() => {
     }else if(id == "Clippify Mobile"){
         setPageData(workData.Work.ClippifyMobile);
     }
-    console.log(id);
 },[]);
 
 return(

@@ -25,34 +25,33 @@ const NavBar = () => {
     };
   }, []);
 
-  return (
-    <nav ref={navRef}>
-      <div className={`nav-bar ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-        <i className='bx bx-menu sidebarOpen' onClick={() => setSidebarOpen(!isSidebarOpen)} />
-        <span className="logo navLogo"><a href="#">Surfware</a></span>
-        <div className="menu">
-          <div className="logo-toggle">
-            <span className="logo"><a href="#">SurferSoftware</a></span>
-            <i className='bx bx-x siderbarClose'></i>
-          </div>
-          <ul className="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+return (
+  <nav ref={navRef}>
+    <div className={`nav-bar ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+      <i className='bx bx-menu sidebarOpen' onClick={() => setSidebarOpen(!isSidebarOpen)} />
+      <span className="logo navLogo"><a href="/">Surfware</a></span>
+      <div className="menu">
+        <div className="logo-toggle">
+          <span className="logo"><a href="#">SurferSoftware</a></span>
+          <i className='bx bx-x siderbarClose'></i>
         </div>
-        <div className="darkLight-searchBox">
-          <div className="dark-light">
-            <i className='bx bx-cart moon'></i>
-            <i className='bx bx-sun sun'></i>
-          </div>
-
-        </div>
+        <ul className="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
-    </nav>
-  );
-}
+      <div className="darkLight-searchBox">
+        <div className="dark-light">
+          <i className='bx bx-cart moon'></i>
+          <i className='bx bx-sun sun'></i>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+)};
 
 export default NavBar;
