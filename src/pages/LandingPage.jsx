@@ -97,6 +97,10 @@ const handlePortfolioNavigation = (title) => {
     window.location.href = '/portfolio/'+title;
 }
 
+const handleVrPressed = () => {
+    window.location.href = '/about-me';
+}
+
 
 return (
 <>
@@ -149,20 +153,15 @@ return (
             </div>
 
             <div className="service-show">
-                <div style={{height:460,width:500,position:"absolute",right:0,objectFit:"cover"}}>
-                {isSelected === "web" ? <Spline scene="https://prod.spline.design/93k0UQpHjCDQ-xcA/scene.splinecode" />  : isSelected === "mobile" ? <Spline scene="https://prod.spline.design/7Tw5Onj31K29lbsG/scene.splinecode" /> : isSelected === "cross" ? <h1>Cross-Platform</h1> : null}
-                </div>
-                <ServiceBox props={isSelected === "web" ? webData : isSelected === "mobile" ? mobileData : isSelected === "cross" ? crossData : null} /> 
-                
-    
-                <div className="service-list">
-                    <h5>• Fene</h5>
-                    <h5>• Fene</h5>
-                    <h5>• Fene</h5>
-                    <h5>• Fene</h5>
-                    <h5>• Fene</h5>
-                    <h5>• Fene</h5>
+                {/* <ServiceBox props={isSelected === "web" ? webData : isSelected === "mobile" ? mobileData : isSelected === "cross" ? crossData : null} />  */}
+                <div className="service-grid-box">
 
+                        <h2 className="service-help-title">I CAN HELP YOU</h2>
+                        <ServiceBox />
+                </div>
+
+                <div className="device-show" >
+                {isSelected === "web" ?  <Spline scene="https://prod.spline.design/93k0UQpHjCDQ-xcA/scene.splinecode" /> : isSelected === "mobile" ? <Spline scene="https://prod.spline.design/7Tw5Onj31K29lbsG/scene.splinecode" /> : isSelected === "cross" ? <h1>Cross-Platform</h1> : null}
                 </div>
             </div>
 
@@ -231,16 +230,22 @@ return (
                 </div>
             </div>
 
-            <div>
-
+            <div className="aboutme-section">
+                    <h2>About Me</h2>
+                    <h5>Let me show you with another perspective</h5>
+                    <div onClick={handleVrPressed} style={{cursor:"pointer"}}> 
+                        <div  style={{height:500,zIndex:-1,marginTop:-100}}> 
+                        <Spline scene="https://prod.spline.design/KX8f-KHZwA3H06Gs/scene.splinecode" />
+                        </div>
+                    </div>
             </div>
 
-            <div className="review-row">
+            {/* <div className="review-row">
                 <div className="review-box">
                     <h3>Anonymus</h3>
                     <h4>Working with Tamas was a delight! Their expertise, attention to detail, and commitment to deadlines exceeded my expectations. The app they developed not only met but surpassed my vision. I highly recommend !!!</h4>
                 </div>
-            </div>
+            </div> */}
         </div>
     </div>
 </>
