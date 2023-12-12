@@ -388,8 +388,6 @@ object-fit: cover;
     font-size: 20px;
     font-weight: 300;
     opacity: 0.7;
-    
-   
 }
 
 .spline3D{
@@ -443,8 +441,10 @@ object-fit: cover;
     justify-content: space-around;
     align-items: center;
     margin-right: auto;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: auto;
+    margin-top: 40px;
+    border-top: 2px groove whitesmoke;
+ 
 }
 
 .service-box-row{
@@ -762,11 +762,13 @@ object-fit: cover;
 .service-help-title{
     font-size:23px;
     margin-bottom: 20px;
+   
 }
 
 .service-grid-box{
     display:flex;
-    flex-direction:column
+    flex-direction:column;
+    padding: 20px;
 }
 
 

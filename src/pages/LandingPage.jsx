@@ -1,44 +1,50 @@
+//CSS
 import "../CSS/navbar.css";
-import { motion } from "framer-motion";
-import Spline from '@splinetool/react-spline';
-
-import React from "react";
-import downArrow from "../assets/down-arrow.png";
-import ServiceBox from "../components/serviceBox";
-
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules'
-
 import '../../node_modules/swiper/swiper-bundle.min.css'
 import '../../node_modules/swiper/swiper.min.css'
 
+//MOTION FOR ANIMATED ELEMENTS
+import { motion } from "framer-motion";
 
+//SPLINE 3D
+import Spline from '@splinetool/react-spline';
+
+//REACT
+import React from "react";
+
+//IMAGE
+import downArrow from "../assets/down-arrow.png";
+
+//COMPONENTS
+import ServiceBox from "../components/serviceBox";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules'
+
+//MOTION VARIANTS
 const textVariants = {
-  initial: {
-    x: -500,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.1,
+    initial: {
+        x: -500,
+        opacity: 0,
     },
-  },
-  scrollButton: {
-    opacity: 0,
-    y: 10,
-    transition: {
-      duration: 2,
-      repeat: Infinity,
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+        },
     },
-  },
+    scrollButton: {
+        opacity: 0,
+        y: 10,
+        transition: {
+        duration: 2,
+        repeat: Infinity,
+        },
+    },
 };
 
-
 const LandingPage = () => {
-
 
 //<**************VARIABLES**********************>
 
@@ -93,10 +99,12 @@ const crossData = {
 
 //<**************FUNCTIONS**********************>
 
+//HANDLE PORTFOLIO NAVIGATION
 const handlePortfolioNavigation = (title) => {
     window.location.href = '/portfolio/'+title;
 }
 
+//HANDLE VR PRESSED
 const handleVrPressed = () => {
     window.location.href = '/about-me';
 }
@@ -149,19 +157,16 @@ return (
                 <h3 onClick={() => setIsSelected("mobile")} className={isSelected === "mobile" ? "selected" : "select"}>Mobile App</h3>
                 <h3 onClick={() => setIsSelected("web")} className={isSelected === "web" ? "selected" : "select"} >Web App</h3>
                 <h3  onClick={() => setIsSelected("cross")} className={isSelected === "cross" ? "selected" : "select"}>Cross-Platform</h3>
-
             </div>
 
             <div className="service-show">
                 {/* <ServiceBox props={isSelected === "web" ? webData : isSelected === "mobile" ? mobileData : isSelected === "cross" ? crossData : null} />  */}
                 <div className="service-grid-box">
-
-                        <h2 className="service-help-title">I CAN HELP YOU</h2>
-                        <ServiceBox />
+                    <h2 className="service-help-title">I CAN HELP YOU</h2>
+                    <ServiceBox />
                 </div>
-
                 <div className="device-show" >
-                {isSelected === "web" ?  <Spline scene="https://prod.spline.design/93k0UQpHjCDQ-xcA/scene.splinecode" /> : isSelected === "mobile" ? <Spline scene="https://prod.spline.design/7Tw5Onj31K29lbsG/scene.splinecode" /> : isSelected === "cross" ? <h1>Cross-Platform</h1> : null}
+                    {isSelected === "web" ?  <Spline scene="https://prod.spline.design/93k0UQpHjCDQ-xcA/scene.splinecode" /> : isSelected === "mobile" ? <Spline scene="https://prod.spline.design/7Tw5Onj31K29lbsG/scene.splinecode" /> : isSelected === "cross" ? <h1>Cross-Platform</h1> : null}
                 </div>
             </div>
 
@@ -231,13 +236,13 @@ return (
             </div>
 
             <div className="aboutme-section">
-                    <h2>About Me</h2>
-                    <h5>Let me show you with another perspective</h5>
-                    <div onClick={handleVrPressed} style={{cursor:"pointer"}}> 
-                        <div  style={{height:500,zIndex:-1,marginTop:-100}}> 
+                <h2>About Me</h2>
+                <h5>Let me show you with another perspective</h5>
+                <div onClick={handleVrPressed} style={{cursor:"pointer"}}> 
+                    <div  style={{height:500,zIndex:-1,marginTop:-100}}> 
                         <Spline scene="https://prod.spline.design/KX8f-KHZwA3H06Gs/scene.splinecode" />
-                        </div>
                     </div>
+                </div>
             </div>
 
             {/* <div className="review-row">

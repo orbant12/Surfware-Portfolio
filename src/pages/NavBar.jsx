@@ -29,7 +29,7 @@ return (
   <nav ref={navRef}>
     <div className={`nav-bar ${isSidebarOpen ? 'sidebar-open' : ''}`}>
       <i className='bx bx-menu sidebarOpen' onClick={() => setSidebarOpen(!isSidebarOpen)} />
-      <span className="logo navLogo"><a href="/">Surfware</a></span>
+      <span className="logo navLogo"><a href="/">betterByte</a></span>
       <div className="menu">
         <div className="logo-toggle">
           <span className="logo"><a href="#">SurferSoftware</a></span>
