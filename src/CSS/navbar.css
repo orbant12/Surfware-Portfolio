@@ -988,3 +988,51 @@ object-fit: cover;
     align-items: center;
     background-color: #010718;
 }
+
+/*REVIEW BUBBLES*/
+
+.review-bubbles{
+    display: flex;
+    flex-direction: column;
+}
+
+.bubble-rows{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-evenly
+   
+}
+
+.bubbleCol{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.bubble-type1{
+    padding: 10px;
+    border: 1px solid black;
+    width: 250px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.bubble-type2{
+    padding: 10px;
+    border: 1px solid black;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}

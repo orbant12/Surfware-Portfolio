@@ -245,6 +245,78 @@ return (
                 </div>
             </div>
 
+            <div className="review-bubbles">
+                <div className="bubble-rows">
+
+                    {/* COL 1 */}
+                    <div className="bubbleCol">
+                        <div className="bubble-type1">
+                            <h1>5.0</h1>
+                            <h3>Rating</h3>
+                        </div>
+
+                        <div className="bubble-type2">
+                            <h1>10+</h1>
+                            <h3>Projects</h3>
+                        </div>
+
+                    </div>
+                    {/* COL 2 */}
+                    <div className="bubbleCol">
+                        <div className="bubble-type2">
+                            <h1>5.0</h1>
+                            <h3>Rating</h3>
+                        </div>
+
+                        <div className="bubble-type1">
+                            <h1>10+</h1>
+                            <h3>Projects</h3>
+                        </div>
+
+                    </div>
+                    {/* COL 3 */}
+                    <div className="bubbleCol">
+                        <div className="bubble-type1">
+                            <h1>5.0</h1>
+                            <h3>Rating</h3>
+                        </div>
+
+                        <div className="bubble-type2">
+                            <h1>10+</h1>
+                            <h3>Projects</h3>
+                        </div>
+
+                    </div>
+                    {/* COL 4 */}
+                    <div className="bubbleCol">
+                        <div className="bubble-type1">
+                            <h1>5.0</h1>
+                            <h3>Rating</h3>
+                        </div>
+
+                        <div className="bubble-type2">
+                            <h1>10+</h1>
+                            <h3>Projects</h3>
+                        </div>
+
+                    </div>
+                    {/* COL 5 */}
+                    <div className="bubbleCol">
+                    <div className="bubble-type2">
+                        <h1>5.0</h1>
+                        <h3>Rating</h3>
+                    </div>
+
+                    <div className="bubble-type1">
+                        <h1>10+</h1>
+                        <h3>Projects</h3>
+                    </div>
+
+                    </div>
+                 
+                </div>
+            </div>
+
             {/* <div className="review-row">
                 <div className="review-box">
                     <h3>Anonymus</h3>
