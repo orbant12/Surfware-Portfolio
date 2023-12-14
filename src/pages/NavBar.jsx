@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import '../CSS/NavBar.css';
 
 const NavBar = () => {
@@ -61,17 +61,19 @@ return (
           <i className='bx bx-x siderbarClose'></i>
         </div>
         <ul className="nav-links">
-          <li><a  href="/">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a  href="/about-me">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div className="darkLight-searchBox">
         <div className="dark-light">
-          <i className='bx bx-cart moon'></i>
-          <i className='bx bx-sun sun'></i>
+          <Link to={"https://www.upwork.com/freelancers/~019974bc76858e091b"}>
+            <i className='bx bx-cart moon'></i>
+          </Link>
+          
         </div>
 
       </div>

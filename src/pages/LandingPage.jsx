@@ -14,6 +14,7 @@ import React from "react";
 
 //IMAGE
 import downArrow from "../assets/down-arrow.png";
+import mePicture from "../assets/mePic.png"
 
 //COMPONENTS
 import ServiceBox from "../components/serviceBox";
@@ -142,7 +143,7 @@ return (
             </div>
 
             <div className="spline3D">
-                <Spline scene="https://prod.spline.design/08GxCRZfeAsvSbUl/scene.splinecode" />
+                <img src={mePicture} alt="" />
             </div>
         </div>
         
@@ -156,7 +157,7 @@ return (
             <div className="services-pick">
                 <h3 onClick={() => setIsSelected("mobile")} className={isSelected === "mobile" ? "selected" : "select"}>Mobile App</h3>
                 <h3 onClick={() => setIsSelected("web")} className={isSelected === "web" ? "selected" : "select"} >Web App</h3>
-                <h3  onClick={() => setIsSelected("cross")} className={isSelected === "cross" ? "selected" : "select"}>Cross-Platform</h3>
+                <h3  onClick={() => setIsSelected("cross")} className={isSelected === "cross" ? "selected" : "select"}>AI Inplementation</h3>
             </div>
 
             <div className="service-show">
@@ -167,12 +168,6 @@ return (
                 </div>
                 <div className="device-show" >
                     {isSelected === "web" ?  <Spline scene="https://prod.spline.design/93k0UQpHjCDQ-xcA/scene.splinecode" /> : isSelected === "mobile" ? <Spline scene="https://prod.spline.design/7Tw5Onj31K29lbsG/scene.splinecode" /> : isSelected === "cross" ? <h1>Cross-Platform</h1> : null}
-                </div>
-            </div>
-
-            <div className="service-fee-row">
-                <div className="h-rate">
-                    <h4>Price : 30$ / h</h4>
                 </div>
             </div>
 
@@ -316,6 +311,46 @@ return (
                  
                 </div>
             </div>
+
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col">
+                            <h4>Orban Tamas</h4>
+                            <ul>
+                                <li><a href="/about-me">about Me</a></li>
+                                <li><a href="/services">my services</a></li>
+                                
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Contact Me</h4>
+                            <ul>
+                                <li><a href="#">Email</a></li>
+                                <li><a href="#">Discrod</a></li>
+                                <li><a href="#">LinkedIn</a></li>
+                                <li><a href="#">Github</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Hire me</h4>
+                            <ul>
+                                <li><a href="#">Upwork</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>follow</h4>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
             {/* <div className="review-row">
                 <div className="review-box">
