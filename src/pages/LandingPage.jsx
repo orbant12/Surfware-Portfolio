@@ -20,6 +20,12 @@ import mePicture from "../assets/mePic.png"
 import ServiceBox from "../components/serviceBox";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules'
+import ChatMessage from "../components/chatMessage";
+
+import CancelIcon from '@mui/icons-material/Cancel';
+import ServiceBoxMobile from "../components/serviceBoxMobile";
+import ServiceBoxAi from "../components/serviceBoxAi";
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 //MOTION VARIANTS
 const textVariants = {
@@ -78,7 +84,13 @@ const slider = [
 ]
 
 //IS SELECTED | WEB | MOBILE | CROSS
-const [isSelected, setIsSelected] = React.useState("web");
+const [isSelected, setIsSelected] = React.useState("cross");
+
+const [isAiChatOpen, setIsAiChatOpen]= React.useState(false);
+
+const [assistantInput , setAssistantInput] = React.useState("");
+
+const [chatLog, setChatLog] = React.useState([]);
 
 //WEB DATA
 const webData = {
@@ -109,6 +121,12 @@ const handlePortfolioNavigation = (title) => {
 const handleVrPressed = () => {
     window.location.href = '/about-me';
 }
+
+//HANDLE ASSISTANT INPUT CHANGE
+const handleAssistantInputChange = (e) => {
+    setAssistantInput(e.target.value);
+}
+
 
 
 return (
@@ -164,7 +182,7 @@ return (
                 {/* <ServiceBox props={isSelected === "web" ? webData : isSelected === "mobile" ? mobileData : isSelected === "cross" ? crossData : null} />  */}
                 <div className="service-grid-box">
                     <h2 className="service-help-title">I CAN HELP YOU</h2>
-                    <ServiceBox />
+                    {isSelected === "web" ?  <ServiceBox /> : isSelected === "mobile" ? <ServiceBoxMobile /> : isSelected === "cross" ? <ServiceBoxAi /> : null}
                 </div>
                 <div className="device-show" >
                     {isSelected === "web" ?  <Spline scene="https://prod.spline.design/93k0UQpHjCDQ-xcA/scene.splinecode" /> : isSelected === "mobile" ? <Spline scene="https://prod.spline.design/7Tw5Onj31K29lbsG/scene.splinecode" /> : isSelected === "cross" ? <h1>Cross-Platform</h1> : null}
@@ -311,6 +329,28 @@ return (
                  
                 </div>
             </div>
+
+            <div onClick={() => setIsAiChatOpen(!isAiChatOpen)} className="ai-chat-support">
+            <QuestionMarkIcon />
+            </div>
+
+            {isAiChatOpen ? 
+            <div className="ai-chat">
+                <div className="cancel-icon" onClick={() => setIsAiChatOpen(!isAiChatOpen)}>
+                    <CancelIcon />
+                </div>
+                <div className="ai-chat-title">
+                    <h3>Ai Assistant</h3>
+                </div>
+                <div className="ai-chat-content">
+                {chatLog.map((message,index) => (
+                        <ChatMessage message={message} key={index} />
+                    ))}
+                </div>
+                <div className="ai-chat-input-container">
+                    <input onChange={handleAssistantInputChange} type="text" className="ai-chat-input" />
+                </div>
+            </div> : null}
 
             <footer class="footer">
                 <div class="container">

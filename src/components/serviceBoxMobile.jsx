@@ -3,8 +3,11 @@ import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import FastForwardIcon from '@mui/icons-material/FastForward';
 import ConstructionIcon from '@mui/icons-material/Construction';
+import ShopIcon from '@mui/icons-material/Shop';
+import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen';
+import NextWeekIcon from '@mui/icons-material/NextWeek';
 
-const ServiceBox = ({props}) => {
+const ServiceBoxMobile = ({props}) => {
 
 return (
 <div className="service-box">
@@ -13,16 +16,16 @@ return (
 
             <div className='service-one-box'>
                 <div className='service-icon'>
-                    <ExtensionIcon />
+                    <AddToHomeScreenIcon />
                 </div>
                 <h3>Inplement Any <span className='highlight-span'>Requested Features</span> with a Focus to <span className='highlight-span'>Scale Your Business</span></h3>
             </div>
 
             <div className='service-one-box'>
                 <div className='service-icon'>
-                        <AddBusinessIcon />
+                        <NextWeekIcon />
                     </div>
-                <h3>Create a web-app for <span className='highlight-span'>you</span> or your <span className='highlight-span' >business</span> <br /> (online shop, restaurant... extc)</h3>
+                <h3>Create a Mobile App for <span className='highlight-span'>you</span> or your <span className='highlight-span' >business</span> <br /> (online shop, restaurant... extc)</h3>
             </div>
             
         </div>
@@ -34,14 +37,13 @@ return (
             <div className='service-icon'>
                 <ConstructionIcon />
             </div>
-            <h3>Build your website from scratch <br /> • <span className='highlight-span2'>MORE and UNIQ FEATURES</span><br /> • <span className='highlight-span2' >FULL CUSTOMABILITY</span><br />• <span className='highlight-span2'> No Monthly Payment</span> </h3>
+            <h3>Build your App from scratch <br /> • <span className='highlight-span2'></span><br /> • <span className='highlight-span2' >FULL CUSTOMABILITY</span><br />• <span className='highlight-span2'>Both IOS and Android</span> </h3>
         </div>
-  
         <div className='service-one-box'>
             <div className='service-icon'>
-                    <FastForwardIcon />
+                    <ShopIcon />
                 </div>
-            <h3>Stand out with a <span className='highlight-span'>MODERN</span> and <span className='highlight-span'>PROFESSIONAL</span> website</h3>
+            <h3>Start Your Dream App and Publish it to the world on <br /> <span className='highlight-span'>APP STORE</span> and <span className='highlight-span'>PLAY STORE</span></h3>
         </div>
         
     </div>
@@ -49,4 +51,4 @@ return (
 </div>
 )}
 
-export default ServiceBox;
+export default ServiceBoxMobile;

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import React,{useEffect} from 'react';
 import '../CSS/navbar.css';
 import workData from '../portfolio.json'
+import VideoUrlApp from '../components/videoTrim/videoUrlApp';
 
 const PortfolioPage = () => {
 
@@ -79,13 +80,14 @@ return(
                     <a className="tryFree" href={pageData.navigation}>Try it for Free</a>
                 </div>
             </div>
-            <iframe className="youtube-frame"  src={pageData.youtube} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            <iframe className="youtube-frame" src={pageData.youtube} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
         </div>
 
         <div className="this-project-box">
             <h3 className="this-project-title">This Project <br /> Made Me an Expert In</h3>
             {pageData.expertise.map((item, index) => {
                 return (
+                    <>
                     <div className={index % 2 == 0 ? "experience-box" : "experience-box-reverse"} key={index}>
                         <img className="exp-img" src={item.logo} alt="" />
                         <div className="exp-text">
@@ -99,6 +101,10 @@ return(
                             </ul> 
                         </div>
                     </div>
+                    <div className="experience-show">
+                        <VideoUrlApp UrlFromOutSide={"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"} />
+                    </div>
+                </>
                 );
             })}
         </div>
