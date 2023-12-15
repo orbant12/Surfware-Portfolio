@@ -10,8 +10,6 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import EditIcon from '@mui/icons-material/Edit';
 import OutputVideo2 from "./outputNoDown"
 
-
-
 const FF = createFFmpeg({
   log: true,
   corePath: "https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js",
@@ -20,7 +18,6 @@ const FF = createFFmpeg({
   (async function () {
     await FF.load();
   })();
-  
 
 function VideoUrlApp({setCreateBtn,setPassedDataUrl,setExtractMeta,setPassedAudioDataUrl,UrlFromOutSide}) {
 
@@ -46,6 +43,7 @@ const [isEditing, setIsEditing] = useState(false);
 const [clipTitle, setClipTitle] = useState('Your Clip Title');
 
 
+
 const handleVideoFileChange = async (videoFile) => {
   setInputVideoFile(videoFile);
   setDeletedState(true);
@@ -59,7 +57,7 @@ const handleUpdateRange = (func) => {
     func(value);
   };
 };
-  
+
 const getThumbnails = async ({ duration }) => {
   if (!FF.isLoaded()) await FF.load();
   setThumbnailIsProcessing(true);
@@ -102,8 +100,6 @@ const getThumbnails = async ({ duration }) => {
   return arrayOfImageURIs;
 };
 
-
-    
 const handleLoadedData = async (e) => {
   const el = e.target;
   const meta = {

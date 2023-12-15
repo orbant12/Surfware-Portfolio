@@ -20,7 +20,7 @@ import mePicture from "../assets/mePic.png"
 import ServiceBox from "../components/serviceBox";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules'
-import ChatMessage from "../components/chatMessage";
+import ChatMessage from "../components/ClippifyComponents/chatMessage";
 
 import CancelIcon from '@mui/icons-material/Cancel';
 import ServiceBoxMobile from "../components/serviceBoxMobile";
