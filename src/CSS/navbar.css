@@ -796,6 +796,7 @@ object-fit: cover;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    margin-bottom: 30px;
 }
 
 .service-help-title{
@@ -875,15 +876,31 @@ object-fit: cover;
   position: absolute;
   display: flex;
   flex-direction: column;
-  z-index: 100;
+  z-index: 1;
   padding: 10px;
   margin-top: 80px;
   margin-left: -25px;
-
   background-color: white;
   border-radius: 50%;
   border: 1px solid black;
   cursor: pointer;
+  border-bottom: 1px groove black;
+  border-right: 1px groove black;
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.github-link:hover{
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+}
+
+.github-link:active{
+  transition: all 0.3s ease;
+  transform: scale(0.8);
 }
 
 
