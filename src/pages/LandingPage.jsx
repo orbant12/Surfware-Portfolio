@@ -26,6 +26,11 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import ServiceBoxMobile from "../components/serviceBoxMobile";
 import ServiceBoxAi from "../components/serviceBoxAi";
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import BasicModal from "../components/CertificateModal/certifitaceModal";
+import metaLogo from "../assets/meta-logo.jpeg";
+import metaCertificate from '../assets/META.jpg'
+import udemyLogo from '../assets/udemyIMAGE.png'
+import UdemyIosCertificate from '../assets/UdemyIosCert.jpeg'
 
 //MOTION VARIANTS
 const textVariants = {
@@ -258,14 +263,22 @@ return (
                 </div>
             </div>
 
+         
+
             <div className="review-bubbles">
                 <div className="bubble-rows">
 
                     {/* COL 1 */}
                     <div className="bubbleCol">
                         <div className="bubble-type1">
-                            <h1>5.0</h1>
-                            <h3>Rating</h3>
+                            <div className="cert-logo">
+                                <img src={metaLogo} alt="" />
+                            </div>
+                           
+                            <h3>NATIVE APP DEVELOPMENT</h3>
+                            <div>
+                                <BasicModal input={metaCertificate}  />
+                            </div>
                         </div>
 
                         <div className="bubble-type2">
@@ -282,16 +295,27 @@ return (
                         </div>
 
                         <div className="bubble-type1">
-                            <h1>10+</h1>
-                            <h3>Projects</h3>
+                            <div className="cert-logo">
+                                <img src={udemyLogo} alt="" />
+                            </div>
+                            <h3>IOS APP DEVELOPMENT</h3>
+                            <div>
+                                <BasicModal input={UdemyIosCertificate} />
+                            </div>
                         </div>
 
                     </div>
                     {/* COL 3 */}
                     <div className="bubbleCol">
-                        <div className="bubble-type1">
-                            <h1>5.0</h1>
-                            <h3>Rating</h3>
+                    <div className="bubble-type1">
+                            <div className="cert-logo">
+                                <img src={metaLogo} alt="" />
+                            </div>
+                           
+                            <h3>Machine Leaning</h3>
+                            <div>
+                                <BasicModal />
+                            </div>
                         </div>
 
                         <div className="bubble-type2">
@@ -303,8 +327,14 @@ return (
                     {/* COL 4 */}
                     <div className="bubbleCol">
                         <div className="bubble-type1">
-                            <h1>5.0</h1>
-                            <h3>Rating</h3>
+                            <div className="cert-logo">
+                                <img src={metaLogo} alt="" />
+                            </div>
+                           
+                            <h3>Backend Development</h3>
+                            <div>
+                                <BasicModal />
+                            </div>
                         </div>
 
                         <div className="bubble-type2">
@@ -321,12 +351,16 @@ return (
                     </div>
 
                     <div className="bubble-type1">
-                        <h1>10+</h1>
-                        <h3>Projects</h3>
+                            <div className="cert-logo">
+                                <img src={udemyLogo} alt="" />
+                            </div>
+                            <h3>Fullstack Web Development</h3>
+                            <div>
+                                <BasicModal input={metaCertificate} />
+                            </div>
                     </div>
 
                     </div>
-                 
                 </div>
             </div>
 

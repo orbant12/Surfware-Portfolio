@@ -1140,7 +1140,8 @@ object-fit: cover;
     height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 20px;
     margin-bottom: 30px;
 }
@@ -1155,6 +1156,21 @@ object-fit: cover;
     justify-content: center;
     border-radius: 20px;
     margin-bottom: 30px;
+}
+
+.cert-logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cert-logo img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
 }
 
 /*FOOTER*/
