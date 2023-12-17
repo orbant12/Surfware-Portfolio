@@ -7,7 +7,7 @@ import ShopIcon from '@mui/icons-material/Shop';
 import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen';
 import NextWeekIcon from '@mui/icons-material/NextWeek';
 
-const ServiceBoxMobile = ({props}) => {
+const ServiceBoxMobile = () => {
 
 return (
 <div className="service-box">

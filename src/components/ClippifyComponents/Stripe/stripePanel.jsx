@@ -12,11 +12,13 @@ const manageSubscription = async() =>{
 }
     
 return (
+<div className="experience-show">
     <div className='stripe-container'>
         <div onClick={manageSubscription} className='stripe-btn'>
             <h2>Open Test Checkout Panel</h2>
         </div>
     </div>
+</div>
 )
 };
 

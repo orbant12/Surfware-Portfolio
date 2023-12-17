@@ -1,9 +1,15 @@
 
-const VideoFrame = () => {
+
+const VideoFrame = ({videoSrc}) => {
     return (
+<div className="experience-show">
     <div className="video-frame">
-        <video  className="video-frame__video" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" controls ></video>
+      
+        <video loop autoPlay muted className="video-frame__video"  >
+        <source type="video/mp4" src={videoSrc} />
+        </video>
     </div>
+</div>
     )
 }
 

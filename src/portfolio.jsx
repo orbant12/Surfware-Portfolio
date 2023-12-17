@@ -18,6 +18,19 @@ import WatchLaterIcon from './assets/wlater.png';
 import SEOIcon from './assets/seo.jpeg';
 import CommentIcon from './assets/comment.jpeg';
 import RichTextEditorIcon from './assets/richTE.png';
+import ImageFrame from './components/ClippifyComponents/videoFrame/imageFrame';
+import HoverFrame from './components/ClippifyComponents/videoFrame/hoverFrame';
+
+//INDIVIDUAL IMPORTS - CLIPPIFY
+//TRANSCRIPT
+import imageImport from "./assets/trans.png"
+//FFMPEG
+import clippifyClip from './assets/ClippifyClip.mp4'
+
+//LUPODY
+//UI CSS
+import uiCSS from './assets/AdvancedCSS.png'
+
 
 export const ClippifyData = {
     title: "Clippify",
@@ -61,7 +74,7 @@ export const ClippifyData = {
           "FFmpeg syntax for video manipulation",
           "Timeline Bar from thumbnails"
         ],
-        show: () => <VideoFrame />
+        show: () => <VideoFrame videoSrc={clippifyClip} />
       },
       {
         logo: SpeechToTextjpg,
@@ -71,7 +84,7 @@ export const ClippifyData = {
             "FFmpeg syntax for video manipulation",
             "Timeline Bar from thumbnails"
         ],
-        show: () => <TranscripterConvert />
+        show: () => <ImageFrame image={imageImport} />
       },
       {
         logo: Stripejpg,
@@ -91,7 +104,7 @@ export const ClippifyData = {
             "FFmpeg syntax for video manipulation",
             "Timeline Bar from thumbnails"
         ],
-        show: () => <StripePanel />
+      
       },
       {
         logo: CORSIcon,
@@ -102,7 +115,7 @@ export const ClippifyData = {
             "• Header Manipulation",
             "• Limitations of Isolation"
         ],
-        show: () => <StripePanel />
+       
       },
     ]
 };
@@ -129,7 +142,7 @@ export const LupodyData = {
             "• Listeners",
             "• Custom Plugins (CODE, MARKDOWN, LINK, LIST)",
         ],
-        show: () => <Editor />
+        show: () => <ImageFrame image={uiCSS} />
       },
       {
         logo: LexicalJPG,
@@ -150,7 +163,7 @@ export const LupodyData = {
           "FFmpeg syntax for video manipulation",
           "Timeline Bar from thumbnails"
         ],
-        show: () => <VideoFrame />
+        show: () => <VideoFrame videoSrc={clippifyClip} />
       },
       {
         logo:  HoverIcon,
@@ -159,7 +172,8 @@ export const LupodyData = {
           "Video type manipulation (blob, data:url, base64)",
           "FFmpeg syntax for video manipulation",
           "Timeline Bar from thumbnails"
-        ]
+        ],
+        show: () => <HoverFrame video={clippifyClip} logo={imageImport}/>
       },
       {
         logo: EditIcon,

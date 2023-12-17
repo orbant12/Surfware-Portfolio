@@ -1,36 +1,28 @@
 import ExampleTheme from "./themes/themeEditor";
-import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import React, {useState} from "react";
 
+import React, { useState} from "react";
 
-import ToolbarPlugin from "./plugins/ToolbarPlugin";
 import { HeadingNode, QuoteNode } from "@lexical/rich-text";
 import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
 import { ListItemNode, ListNode } from "@lexical/list";
 import { CodeHighlightNode, CodeNode } from "@lexical/code";
 import { AutoLinkNode, LinkNode } from "@lexical/link";
-import { useRef } from "react";
 import { getFunctions, httpsCallable } from "firebase/functions";
-import {app,storage} from "../../../firebase"
-import { getDownloadURL, ref } from 'firebase/storage';
+import {app} from "../../../firebase"
+
 
 import 'firebase/functions';
 //GPT
 
 import ChatMessage from "../chatMessage"
 
-const loadContent = async () => {
-  // 'empty' editor
-  const value = '{"root":{"children":[{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1}],"direction":null,"format":"","indent":0,"type":"root","version":1}}';
 
-  return value;
-}
-const initialEditorState = await loadContent();
+
 export const editorConfig = {
  
   // The editor theme
   theme: ExampleTheme,
-  editorState: initialEditorState,
+  editorState: '{"root":{"children":[{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1}],"direction":null,"format":"","indent":0,"type":"root","version":1}}',
   // Handling of errors during update
   onError(error) {
     throw error;
@@ -53,7 +45,7 @@ export const editorConfig = {
 
 
 
-export default function AiText({setData,setContent,audioUrl,passTranscription}) {
+export default function AiText() {
 const functions = getFunctions(app);
 //GPT
 const [aiTxt,setAiTxt] = useState("")//INPUT
@@ -66,8 +58,9 @@ const [isFirstQuestion,setIsFirstQuestion] = useState(true)
 //ANALYZE SCIPT
 const [isScriptLoading, setIsScriptLoading] = useState(false)
 const [isScriptLoaded, setIsScriptLoaded] = useState(false)
-const [transcriptScript,setTranscriptScript] = useState("")
+
 const [summerisingIsLoading,setSummerisingIsLoading] = useState(false)
+
 const handleInputChange = (e) => {
   const userInput = e.target.value;
   setAiTxt(userInput);
@@ -109,8 +102,6 @@ const handleEnterPress = (e) => {
   setIsFirstQuestion(false)
   //BACK TO DEFAULTS
   setAiTxt("")
-  setTranscriptScript("")
-  
 
   }
 
@@ -131,7 +122,7 @@ const handleSummerising = async () =>{
 }
 
 return (
-
+<div className="experience-show">
     <div className="editor-container" >
       <div className={`editor-inner ${!isFirstQuestion ? 'active' : ''}`} style={{border:"0px solid black",background:"transparent"}}>
       {isFirstQuestion ? (
@@ -152,7 +143,7 @@ return (
              </div>
               )
               ):(
-                <div className="feature_1" style={{borderColor:"aquamarine"}} onClick={handleScriptLoaded}>
+                <div className="feature_1" style={{borderColor:"aquamarine"}} >
                  <h2>Scipt is Ready</h2>
                  <h5>Ask Anyithing I Click to Undo</h5>
              </div>
@@ -206,7 +197,7 @@ return (
              </div>
               )
               ):(
-              <div className="feature_1" style={{borderColor:"aquamarine"}} onClick={handleScriptLoaded}>
+              <div className="feature_1" style={{borderColor:"aquamarine"}} >
                  <h2>Scipt is Ready</h2>
                  <h5>Click to Undo</h5>
              </div>
@@ -235,6 +226,7 @@ return (
         </>
         )}
         </div>
+    </div>
     </div>
 );
 }

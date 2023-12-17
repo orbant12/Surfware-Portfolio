@@ -26,17 +26,11 @@ import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import StateUpdater  from "./plugins/htmlPlugin"
 
 
-const loadContent = async () => {
-  // 'empty' editor
-  const value = '{"root":{"children":[{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1}],"direction":null,"format":"","indent":0,"type":"root","version":1}}';
 
-  return value;
-}
-const initialEditorState = await loadContent();
 export const editorConfig = {
   // The editor theme
   theme: ExampleTheme,
-  editorState: initialEditorState,
+  editorState: '{"root":{"children":[{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1}],"direction":null,"format":"","indent":0,"type":"root","version":1}}',
   // Handling of errors during update
   onError(error) {
     throw error;
@@ -64,6 +58,7 @@ export default function Editor({setData,setContent}) {
 const editorStateRef = useRef();
 
 return (
+  <div className="experience-show">
   <LexicalComposer initialConfig={editorConfig}>
     <div className="editor-container">
       <ToolbarPlugin />
@@ -91,5 +86,6 @@ return (
 
     </div>
   </LexicalComposer>
+  </div>
 );
 }

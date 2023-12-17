@@ -32,7 +32,10 @@ import metaCertificate from '../assets/META.jpg'
 import udemyLogo from '../assets/udemyIMAGE.png'
 import UdemyIosCertificate from '../assets/UdemyIosCert.jpeg'
 
-//MOTION VARIANTS
+const LandingPage = () => {
+
+//<**************VARIABLES**********************>
+
 const textVariants = {
     initial: {
         x: -500,
@@ -55,10 +58,6 @@ const textVariants = {
         },
     },
 };
-
-const LandingPage = () => {
-
-//<**************VARIABLES**********************>
 
 const slider = [
     {
@@ -236,7 +235,7 @@ return (
                     >
                         {
                         slider.map(data => (
-                            <SwiperSlide style={{ backgroundImage: `url(${data.url})` }} className="myswiper-slider">
+                            <SwiperSlide key={data.title} style={{ backgroundImage: `url(${data.url})` }} className="myswiper-slider">
                                 <div>
                                     <h2>{data.title}</h2>
                                     <p>{data.description}</p>
@@ -274,7 +273,6 @@ return (
                             <div className="cert-logo">
                                 <img src={metaLogo} alt="" />
                             </div>
-                           
                             <h3>NATIVE APP DEVELOPMENT</h3>
                             <div>
                                 <BasicModal input={metaCertificate}  />
@@ -282,16 +280,16 @@ return (
                         </div>
 
                         <div className="bubble-type2">
-                            <h1>10+</h1>
-                            <h3>Projects</h3>
+                            <h3>Anonymus</h3>
+                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>"Working with Tamas was a delight! Their expertise, attention to detail, and commitment to deadlines exceeded my expectations. The app they developed met my vision. I highly recommend !!!"</h5>
                         </div>
 
                     </div>
                     {/* COL 2 */}
                     <div className="bubbleCol">
                         <div className="bubble-type2">
-                            <h1>5.0</h1>
-                            <h3>Rating</h3>
+                        <h3>Anonymus</h3>
+                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5,fontSize:12}}>"The quick communication on Discord made a world of difference during our app development. It played a huge role in making the process smooth and enjoyable. Respect to your team for fostering such effective communication. It truly sets your service apart!"</h5>
                         </div>
 
                         <div className="bubble-type1">
@@ -319,8 +317,8 @@ return (
                         </div>
 
                         <div className="bubble-type2">
-                            <h1>10+</h1>
-                            <h3>Projects</h3>
+                            <h3>Anonymus</h3>
+                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5,fontSize:14}}>"Your ability to effortlessly understand and implement my ideas, even through handwritings and images, made the collaboration enjoyable."</h5>
                         </div>
 
                     </div>
@@ -338,16 +336,16 @@ return (
                         </div>
 
                         <div className="bubble-type2">
-                            <h1>10+</h1>
-                            <h3>Projects</h3>
+                            <h3>Anonymus</h3>
+                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>"Remarkable speed and affordability compared to the competition. The cost-effectiveness is commendable, allowing for budget-friendly solutions without compromising quality!!"</h5>
                         </div>
 
                     </div>
                     {/* COL 5 */}
                     <div className="bubbleCol">
                     <div className="bubble-type2">
-                        <h1>5.0</h1>
-                        <h3>Rating</h3>
+                    <h3>Anonymus</h3>
+                            <h5 style={{opacity:0.7,fontWeight:400,marginTop:5}}>"In just one week, it's available for download on both the App Store and Google Play—absolutely mind-blowing!!"</h5>
                     </div>
 
                     <div className="bubble-type1">
@@ -378,7 +376,7 @@ return (
                 </div>
                 <div className="ai-chat-content">
                 {chatLog.map((message,index) => (
-                        <ChatMessage message={message} key={index} />
+                        <ChatMessage message={message} id={index} />
                     ))}
                 </div>
                 <div className="ai-chat-input-container">
@@ -386,10 +384,10 @@ return (
                 </div>
             </div> : null}
 
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="footer-col">
+            <footer className="footer">
+                <div className="container">
+                    <div className="row">
+                        <div className="footer-col">
                             <h4>Orban Tamas</h4>
                             <ul>
                                 <li><a href="/about-me">about Me</a></li>
@@ -397,7 +395,7 @@ return (
                                 
                             </ul>
                         </div>
-                        <div class="footer-col">
+                        <div className="footer-col">
                             <h4>Contact Me</h4>
                             <ul>
                                 <li><a href="#">Email</a></li>
@@ -406,20 +404,20 @@ return (
                                 <li><a href="#">Github</a></li>
                             </ul>
                         </div>
-                        <div class="footer-col">
+                        <div className="footer-col">
                             <h4>Hire me</h4>
                             <ul>
                                 <li><a href="#">Upwork</a></li>
 
                             </ul>
                         </div>
-                        <div class="footer-col">
+                        <div className="footer-col">
                             <h4>follow</h4>
-                            <div class="social-links">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <div className="social-links">
+                                <a href="#"><i className="fab fa-facebook-f"></i></a>
+                                <a href="#"><i className="fab fa-twitter"></i></a>
+                                <a href="#"><i className="fab fa-instagram"></i></a>
+                                <a href="#"><i className="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>

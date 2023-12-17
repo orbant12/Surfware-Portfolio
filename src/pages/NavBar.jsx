@@ -1,59 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import '../CSS/NavBar.css';
 
 const NavBar = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [activePage, setActivePage] = useState(''); // ['home', 'about', 'portfolio', 'services', 'contact'
-  const navRef = useRef(null);
-
-  const { id } = useParams();
-
-  const navBarActiveSet = () => {
-    if (id == 'about-me') {
-      setActivePage('about');
-    } else if (id === 'portfolio') {
-      setActivePage('portfolio');
-    } else if (id === 'services') {
-      setActivePage('services');
-    } else if (id === 'contact') {
-      setActivePage('contact');
-    } else if (id === '/') {
-      setActivePage('home');
-    }
-    console.log(id)
-    
-  }
-
-  useEffect(() => {
-    navBarActiveSet();
-  }, [id]);
-
-  useEffect(() => {
-    
-    const handleOutsideClick = (e) => {
-      const clickedElm = e.target;
-      if (
-        navRef.current &&
-        !navRef.current.contains(clickedElm) &&
-        !clickedElm.classList.contains('sidebarOpen') &&
-        !clickedElm.classList.contains('menu')
-      ) {
-        setSidebarOpen(false);
-      }
-    };
-
-    document.body.addEventListener('click', handleOutsideClick);
-
-    return () => {
-      document.body.removeEventListener('click', handleOutsideClick);
-    };
-  }, []);
+  
 
 return (
-  <nav ref={navRef}>
-    <div className={`nav-bar ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-      <i className='bx bx-menu sidebarOpen' onClick={() => setSidebarOpen(!isSidebarOpen)} />
+  <nav>
+    <div className={`nav-bar`}>
+      <i className='bx bx-menu sidebarOpen'/>
       <span className="logo navLogo"><a href="/">betterByte</a></span>
       <div className="menu">
         <div className="logo-toggle">

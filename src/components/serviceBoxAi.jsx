@@ -9,7 +9,7 @@ import BoltIcon from '@mui/icons-material/Bolt';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 
-const ServiceBoxAi = ({props}) => {
+const ServiceBoxAi = () => {
 
 return (
 <div className="service-box">

@@ -4,7 +4,7 @@ import ExtensionIcon from '@mui/icons-material/Extension';
 import FastForwardIcon from '@mui/icons-material/FastForward';
 import ConstructionIcon from '@mui/icons-material/Construction';
 
-const ServiceBox = ({props}) => {
+const ServiceBox = () => {
 
 return (
 <div className="service-box">

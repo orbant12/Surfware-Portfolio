@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import '../CSS/navbar.css';
 import {ClippifyData,LupodyData,LupodyMobileData,ClippifyMobileData} from '../portfolio.jsx'
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -10,7 +10,7 @@ const PortfolioPage = () => {
 const { id } = useParams();
 
 
-const [pageData,setPageData] = React.useState({title:"",list:[],expertise:[{logo:"",title:"",text:[]}]});
+const [pageData,setPageData] = useState({title:"",list:[],expertise:[{logo:"",title:"",text:[]}]});
 
 
 
@@ -44,14 +44,14 @@ return(
                     <a className="tryFree" href={pageData.navigation}>Try it for Free</a>
                 </div>
             </div>
-            <iframe className="youtube-frame" src={pageData.youtube} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            <iframe className="youtube-frame" src={pageData.youtube} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen ></iframe>
         </div>
 
         <div className="this-project-box">
             <h3 className="this-project-title">This Project <br /> Made Me an Expert In</h3>
             {pageData.expertise.map((item, index) => {
                 return (
-                    <div>
+                    <div key={index}>
                            <div className="github-link">
                             <GitHubIcon />
                         </div>
@@ -71,12 +71,7 @@ return(
                         </div>
                      
                     </div>
-                  
-                    <div className="experience-show">
                         {item.show && item.show()}
-                    
-                    </div>
-                
                 </div>
                 );
             })}
